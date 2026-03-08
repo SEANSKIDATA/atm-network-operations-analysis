@@ -52,3 +52,16 @@ Uses SQL window functions to rank the highest-performing ATM in each region.
 
 MySQL  
 SQL
+
+---
+
+## Example Business Insight
+
+Analysis of ATM withdrawal data revealed:
+
+- Bank-branded ATMs averaged **4800 withdrawals**
+- Non-bank ATMs averaged **2383 withdrawals**
+
+This suggests bank locations drive significantly higher transaction demand, likely due to customer trust and branch proximity.
+
+Additionally, regional ranking identified the highest-performing ATM in each region using SQL window functions.
