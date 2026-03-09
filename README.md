@@ -36,8 +36,32 @@ Evaluates the distribution of ATM service activity across armored vendors.
 ### Bank-Branded ATM Performance
 Compares withdrawal demand between bank-branded and non-bank ATM locations.
 
+
 ### Top ATM by Region
 Uses SQL window functions to rank the highest-performing ATM in each region.
+
+## Sample Query Results
+
+
+### SQL Analysis Workspace
+
+![SQL Workspace](analysis_workspace.png)
+
+---
+
+### Bank vs Non-Bank ATM Performance
+
+```sql
+SELECT
+    l.bank_branded,
+    COUNT(DISTINCT l.atm_id) AS total_atms,
+    SUM(s.withdrawals) AS total_withdrawals,
+    ROUND(AVG(s.withdrawals),2) AS avg_withdrawals
+FROM atm_daily_status s
+JOIN atm_locations l
+    ON s.atm_id = l.atm_id
+GROUP BY l.bank_branded;
+
 
 ## SQL Skills Demonstrated
 
@@ -81,3 +105,4 @@ Background in ATM network operations, forecasting, and service performance analy
 
 **LinkedIn:**  
 https://linkedin.com/in/sean-codner-aa60822b
+```
